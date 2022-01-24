@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Header'
 import axios from 'axios';
-import { Card, Input } from 'semantic-ui-react'
+import { Card, Input, Image } from 'semantic-ui-react'
+import placeholderImage from '../images/placeholder.png'
 
 export default function App() {
 
@@ -11,17 +12,17 @@ export default function App() {
 
     const [photoData, setPhotoData] = useState([]);
 
-    useEffect(() => {
+    useEffect(() => { // get user data
         axios.get(`https://jsonplaceholder.typicode.com/users`)
             .then((response) => {
-                setAPIData(response.data);
+               setAPIData(response.data);
             })
     }, [])
 
-    useEffect(() => {
+    useEffect(() => { // get photo data
          axios.get("https://jsonplaceholder.typicode.com/photos")
             .then((response) => {
-                 setPhotoData(response.data);
+               setPhotoData(response.data);
             })
     }, [])
 
@@ -50,33 +51,41 @@ export default function App() {
                {searchInput.length > 1 ? (
                     filteredResults.map((item) => {
                          return (
+                              <center>
                               <Card className="cardStyle">
                                 <Card.Content>
-                                   <img src={item.photo} alt="" value="placeholder"/>
+                                <div className="container">
+                                   <Image src={placeholderImage} alt="" value="placeholder" size="small" wrapped href="" target="_blank" />
                                    <br/>
-                                    <Card.Header className="cardHeader"><strong>{item.name}</strong></Card.Header>
+                                    <Card.Header className="cardHeader"><strong>{item.name}</strong></Card.Header> / <br/>
                                     <Card.Description>
                                         {item.email}
                                     </Card.Description>
                                     <br/>
+                                   </div>
                                 </Card.Content>
                             </Card>
+                            </center>
                          )
                     })
                ) : (
                     apiData.map((item, key) => {
                        return (
+                            <center>
                            <Card>
                                <Card.Content>
-                                  <img src={item.photo} alt="" value="placeholder"/>
+                               <div className="container">
+                                  <Image src={placeholderImage} alt="" value="placeholder" size="small" wrapped href="" target="_blank" />
                                    <br/>
-                                   <Card.Header className="cardHeader"><strong>{item.name}</strong></Card.Header>
+                                   <Card.Header className="cardHeader"><strong>{item.name}</strong></Card.Header> / <br/>
                                    <Card.Description>
                                        {item.email}
                                    </Card.Description>
                                    <br/>
+                               </div>
                                </Card.Content>
                            </Card>
+                           </center>
                        )
                    })
                )}

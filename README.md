@@ -2,12 +2,12 @@
 
 ## Cadence Labs Front End Developer Challenge
 
-Written by [Emilypmendez](github.com/emilypmendez)
+Uploaded January 2022. Written by [Emilypmendez](github.com/emilypmendez). \
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ================================================
 
-## Available Scripts
+## How to Run the App
 
 Start by installing node modules with `npm install`
 Then, in the project directory, you can run: `npm start`
@@ -28,12 +28,13 @@ You may also see any lint errors in the console.
 ## Design Decisions
 
 - The wireframe provided a great reference for determining parent and child components.
-- Functionality is carried throughout the app components infrastructure.
+- The functionality is throughout the app infrastructure.
 
 ## Future Improvements (with more time)
 - UX: I would develop a photo within the contact card with inline styling.
 - UX: I would import real photos to fill in the placeholder image.
 - UX: I would filter for email address instead of the requested information of this exercise.
+- Modularity: I did not have time to build parent and child components as originally intended.
 
 ================================================
 
